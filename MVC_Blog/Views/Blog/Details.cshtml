@@ -1,0 +1,91 @@
+﻿@model MVC_Blog.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h1>@Model.BlogAdi</h1>
+<hr />
+
+        <p>
+            <i class="fal fa-clock"></i>
+            @Model.EklenmeTarihi
+        </p>
+        <img class="img-responsive" width="100%" src="http://placehold.it/900X300" alt="" />
+        <hr />
+        <p>@Model.BlogKonu</p>
+        <blockquote><p>@Model.BlogIcerik</p></blockquote>
+        @if (Model.Onay==true)
+        {
+            <p class="label label-success">Onaylandı</p>
+        }
+        else
+        {
+                <p class="label label-warning">Onay Bekliyor</p>
+        }
+        <hr />
+        <div class="comment">
+            <div class="well">
+                <h4>Yorum Bırakın:</h4>
+                <form role="form">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>                <button type="submit" class="btn btn-primary">Gönder</button>
+                </form><hr />
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="..." />
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Yorum Başlığı</h4>
+
+                        Medya başlığı
+                        Cras, Gravida nulla'da amet nibh libero'yu oturdu. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia faunasında felâket.
+                    </div>
+                </div><br />
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="..." />
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Yorum Başlığı</h4>
+
+                        Medya başlığı
+                        Cras, Gravida nulla'da amet nibh libero'yu oturdu. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia faunasında felâket.
+                    </div>
+                </div><br />
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="..." />
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Yorum Başlığı</h4>
+
+                        Medya başlığı
+                        Cras, Gravida nulla'da amet nibh libero'yu oturdu. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia faunasında felâket.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @section SagKolon{
+            @Html.Partial("Search")
+            @{ Html.RenderAction("KategoriList", "Kategori");}
+            <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Side Widget</h5>
+                <div class="card-body">
+                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                </div>
+            </div>
+        }
+
+
+

@@ -1,0 +1,30 @@
+﻿@model MVC_Blog.Models.Kategori
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Seçili kategoriye silmek istediğinize amin misiniz?</h3>
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAd)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-default" /> |
+        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+    }
+</div>

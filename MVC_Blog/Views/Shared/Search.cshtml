@@ -1,0 +1,18 @@
+﻿@using (Html.BeginForm("List","Blog",FormMethod.Get))
+{
+    <div class="well">
+        <!-- Search Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">Blog Arama</h5><hr />
+            <div class="card-body">
+                <div class="input-group">
+                    @Html.TextBox("q",null,new { @class="form-control"})
+                    
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="submit">Ara</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

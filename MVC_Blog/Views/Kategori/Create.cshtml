@@ -1,0 +1,38 @@
+﻿@model MVC_Blog.Models.Kategori
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Yeni Kategori Ekle </h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <hr /><label class="control-label col-md-2">Kategori Adı Yazınız</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KategoriAd, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.KategoriAd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-default btn-md" />
+            </div><hr />
+        </div>
+    </div>
+}
+    
+        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn btn-primary" })
+    
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
